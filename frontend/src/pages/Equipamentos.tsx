@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/equipamentos.css";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import { listAssets, clearToken } from "../lib/api";
 
@@ -143,6 +145,7 @@ export function Equipamentos() {
           <div className="equip-user-meta">
             <p className="equip-user-name">{authUser?.name ?? "—"}</p>
             <p className="equip-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -151,6 +154,7 @@ export function Equipamentos() {
         <header className="equip-topbar">
           <span className="equip-org">Apogeu Automação</span>
           <div className="equip-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="equip-bell" />
             <Link className="equip-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="equip-logout-icon" />

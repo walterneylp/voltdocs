@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import {
   clearToken,
@@ -852,6 +854,7 @@ export function Pie() {
           <div className="pie-user-meta">
             <p className="pie-user-name">{authUser?.name ?? "—"}</p>
             <p className="pie-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -860,6 +863,7 @@ export function Pie() {
         <header className="pie-topbar">
           <span className="pie-org">Apogeu Automação</span>
           <div className="pie-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="pie-bell" />
             <Link className="pie-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="pie-logout-icon" />

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import { clearToken, listAssets, listProfiles, listTickets, listUserGroups } from "../lib/api";
 import "../styles/chamados.css";
@@ -280,6 +282,7 @@ export function Chamados() {
           <div className="chamados-user-meta">
             <p className="chamados-user-name">{authUser?.name ?? "—"}</p>
             <p className="chamados-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -288,6 +291,7 @@ export function Chamados() {
         <header className="chamados-topbar">
           <span className="chamados-org">Apogeu Automação</span>
           <div className="chamados-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="chamados-bell" />
             <Link className="chamados-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="chamados-logout-icon" />

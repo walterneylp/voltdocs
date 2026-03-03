@@ -26,6 +26,7 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 220px 1fr;
+  background: var(--relatorios-bg);
 }
 
 .relatorios-sidebar {
@@ -142,6 +143,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: var(--relatorios-bg);
 }
 
 .relatorios-topbar {
@@ -190,6 +192,7 @@ body {
 
 .relatorios-main {
   padding: 20px 24px 40px;
+  background: var(--relatorios-bg);
 }
 
 .relatorios-header {
@@ -246,6 +249,91 @@ body {
 
 .relatorios-export {
   background: #ffffff;
+}
+
+:root[data-theme="dark"] .relatorios .relatorios-topbar {
+  background: #101827;
+  border-bottom-color: var(--relatorios-border);
+}
+
+:root[data-theme="dark"] .relatorios .relatorios-tab,
+:root[data-theme="dark"] .relatorios .relatorios-export,
+:root[data-theme="dark"] .relatorios .relatorios-print-btn {
+  background: #111b2a;
+  color: #d9e5f4;
+  border-color: var(--relatorios-border);
+}
+
+:root[data-theme="dark"] .relatorios .relatorios-tab.is-active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+:root[data-theme="dark"] .relatorios .relatorios-panel h2,
+:root[data-theme="dark"] .relatorios .relatorios-listagens h2,
+:root[data-theme="dark"] .relatorios .relatorios-header h1 {
+  color: #e6edf8;
+}
+
+:root[data-theme="dark"] .relatorios .relatorios-donut-gap {
+  background: var(--relatorios-card);
+}
+
+.relatorios-listagens {
+  margin-top: 0;
+}
+
+.relatorios-listagens h2 {
+  margin: 0;
+  font-size: 15px;
+  color: #1f2937;
+}
+
+.relatorios-listagens p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--relatorios-muted);
+}
+
+.relatorios-listagens-card {
+  margin-top: 16px;
+  background: var(--relatorios-card);
+  border: 1px solid var(--relatorios-border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.relatorios-print-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.relatorios-print-btn {
+  border: 1px solid var(--relatorios-border);
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.relatorios-print-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.relatorios-report-error {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #b91c1c;
 }
 
 .relatorios-cards {
@@ -387,6 +475,10 @@ body {
 }
 
 @media (max-width: 1080px) {
+  .relatorios-print-grid {
+    grid-template-columns: 1fr;
+  }
+
   .relatorios-cards {
     grid-template-columns: 1fr;
   }

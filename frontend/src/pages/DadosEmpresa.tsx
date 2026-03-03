@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { clearAuthUser, getAuthUser } from "../lib/auth";
 import {
   clearToken,
@@ -289,6 +291,7 @@ export function DadosEmpresa() {
           <div className="empresa-user-meta">
             <p className="empresa-user-name">{authUser?.name ?? "—"}</p>
             <p className="empresa-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -297,6 +300,7 @@ export function DadosEmpresa() {
         <header className="empresa-topbar">
           <span className="empresa-org">Apogeu Automacao</span>
           <div className="empresa-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="empresa-bell" />
             <Link className="empresa-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="empresa-logout-icon" />

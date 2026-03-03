@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import {
   addUserGroupMember,
@@ -327,6 +329,7 @@ export function Usuarios() {
           <div className="usuarios-user-meta">
             <p className="usuarios-user-name">{authUser?.name ?? "—"}</p>
             <p className="usuarios-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -335,6 +338,7 @@ export function Usuarios() {
         <header className="usuarios-topbar">
           <span className="usuarios-org">Apogeu Automação</span>
           <div className="usuarios-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="usuarios-bell" />
             <Link
               className="usuarios-logout"

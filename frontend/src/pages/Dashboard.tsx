@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import "../styles/dashboard.css";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import {
   clearToken,
@@ -161,6 +163,7 @@ export function Dashboard() {
           <div className="user-meta">
             <p className="user-name">{authUser?.name ?? "—"}</p>
             <p className="user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -169,6 +172,7 @@ export function Dashboard() {
         <header className="topbar">
           <span className="topbar-org">Apogeu Automação</span>
           <div className="topbar-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="topbar-icon" />
             <Link className="topbar-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="topbar-logout-icon" />

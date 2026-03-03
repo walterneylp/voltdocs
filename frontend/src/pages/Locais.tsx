@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import { clearToken, listSites } from "../lib/api";
 import "../styles/locais.css";
@@ -139,6 +141,7 @@ export function Locais() {
           <div className="locais-user-meta">
             <p className="locais-user-name">{authUser?.name ?? "—"}</p>
             <p className="locais-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -147,6 +150,7 @@ export function Locais() {
         <header className="locais-topbar">
           <span className="locais-org">Apogeu Automação</span>
           <div className="locais-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="locais-bell" />
             <Link className="locais-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="locais-logout-icon" />

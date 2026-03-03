@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser } from "../lib/auth";
+import { AppTheme, readStoredTheme, saveTheme } from "../lib/theme";
 import {
   getMe,
   getDocumentVersionUrl,
@@ -15,8 +17,6 @@ import {
 } from "../lib/api";
 import "../styles/mobile-app.css";
 
-const THEME_KEY = "mobile_theme";
-
 const formatDate = (value?: string | null) => {
   if (!value) return "—";
   const date = new Date(value);
@@ -27,7 +27,7 @@ const formatDate = (value?: string | null) => {
 export function MobileApp() {
   const authUser = getAuthUser();
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState<AppTheme>(() => readStoredTheme());
   const [activeTab, setActiveTab] = useState<"qr" | "ordens" | "perfil" | "eventos">(
     "qr"
   );
@@ -169,13 +169,7 @@ export function MobileApp() {
   }, [isRecordingFreeEventAudio]);
 
   useEffect(() => {
-    const stored = localStorage.getItem(THEME_KEY);
-    if (stored === "dark") setTheme("dark");
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.dataset.mobileTheme = theme;
-    localStorage.setItem(THEME_KEY, theme);
+    saveTheme(theme);
   }, [theme]);
 
   useEffect(() => {
@@ -1092,6 +1086,7 @@ export function MobileApp() {
             <div className="mobile-card">
               <strong>{authUser?.name ?? "—"}</strong>
               <span>{authUser?.email ?? "—"}</span>
+            <AppBuildInfo />
             </div>
             <div className="mobile-card">
               <h4>Preferencias</h4>

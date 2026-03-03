@@ -372,6 +372,51 @@ body {
   background: #f1f5f9;
 }
 
+:root[data-theme="dark"] .chamados-filters {
+  background: #141d2b;
+  border-color: #2b394d;
+}
+
+:root[data-theme="dark"] .chamados-filter label,
+:root[data-theme="dark"] .chamados-filter-checks p {
+  color: #9fb0c7;
+}
+
+:root[data-theme="dark"] .chamados-input,
+:root[data-theme="dark"] .chamados-select {
+  background: #111b2a;
+  border-color: #2b394d;
+}
+
+:root[data-theme="dark"] .chamados-input input,
+:root[data-theme="dark"] .chamados-select select {
+  color: #dbe7f6;
+}
+
+:root[data-theme="dark"] .chamados-input input::placeholder {
+  color: #8fa3be;
+}
+
+:root[data-theme="dark"] .chamados-input-icon,
+:root[data-theme="dark"] .chamados-select-icon {
+  color: #8fa3be;
+}
+
+:root[data-theme="dark"] .chamados-filter-results {
+  background: #141d2b;
+  border-color: #2b394d;
+  box-shadow: 0 12px 24px rgba(2, 6, 23, 0.45);
+}
+
+:root[data-theme="dark"] .chamados-filter-item {
+  background: #141d2b;
+  color: #dbe7f6;
+}
+
+:root[data-theme="dark"] .chamados-filter-item:hover {
+  background: #111b2a;
+}
+
 .chamados-filter-checks {
   margin-top: 12px;
   display: grid;

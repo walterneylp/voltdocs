@@ -299,6 +299,47 @@ body {
   color: #94a3b8;
 }
 
+:root[data-theme="dark"] .locais-filter label {
+  color: #9fb0c7;
+}
+
+:root[data-theme="dark"] .locais-filters {
+  background: #141d2b;
+  border-color: #2b394d;
+}
+
+:root[data-theme="dark"] .locais-filter-input {
+  background: #111b2a;
+  border-color: #2b394d;
+}
+
+:root[data-theme="dark"] .locais-filter-input input {
+  color: #dbe7f6;
+}
+
+:root[data-theme="dark"] .locais-filter-input input::placeholder {
+  color: #8fa3be;
+}
+
+:root[data-theme="dark"] .locais-filter-icon {
+  color: #8fa3be;
+}
+
+:root[data-theme="dark"] .locais-filter-results {
+  background: #141d2b;
+  border-color: #2b394d;
+  box-shadow: 0 12px 24px rgba(2, 6, 23, 0.45);
+}
+
+:root[data-theme="dark"] .locais-filter-item {
+  background: #141d2b;
+  color: #dbe7f6;
+}
+
+:root[data-theme="dark"] .locais-filter-item:hover {
+  background: #111b2a;
+}
+
 .locais-new {
   border: none;
   background: #0f172a;

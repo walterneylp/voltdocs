@@ -431,6 +431,64 @@ body {
   color: var(--docs-muted);
 }
 
+:root[data-theme="dark"] .documentos-categories {
+  background: #111b2a;
+  border-color: #2b394d;
+  color: #dbe7f6;
+}
+
+:root[data-theme="dark"] .documentos-filters {
+  background: #141d2b;
+  border-color: #2b394d;
+}
+
+:root[data-theme="dark"] .documentos-search label,
+:root[data-theme="dark"] .documentos-filter label,
+:root[data-theme="dark"] .documentos-filter-meta {
+  color: #9fb0c7;
+}
+
+:root[data-theme="dark"] .documentos-input,
+:root[data-theme="dark"] .documentos-select,
+:root[data-theme="dark"] .documentos-dropdown-search {
+  background: #111b2a;
+  border-color: #2b394d;
+}
+
+:root[data-theme="dark"] .documentos-input input,
+:root[data-theme="dark"] .documentos-select select,
+:root[data-theme="dark"] .documentos-dropdown-search input {
+  color: #dbe7f6;
+}
+
+:root[data-theme="dark"] .documentos-input input::placeholder,
+:root[data-theme="dark"] .documentos-dropdown-search input::placeholder {
+  color: #8fa3be;
+}
+
+:root[data-theme="dark"] .documentos-input-icon,
+:root[data-theme="dark"] .documentos-select-icon {
+  color: #8fa3be;
+}
+
+:root[data-theme="dark"] .documentos-filter-panel,
+:root[data-theme="dark"] .documentos-dropdown,
+:root[data-theme="dark"] .documentos-filter-results {
+  background: #141d2b;
+  border-color: #2b394d;
+  box-shadow: 0 12px 24px rgba(2, 6, 23, 0.45);
+}
+
+:root[data-theme="dark"] .documentos-dropdown-item,
+:root[data-theme="dark"] .documentos-filter-item {
+  background: #141d2b;
+  color: #dbe7f6;
+}
+
+:root[data-theme="dark"] .documentos-filter-item:hover {
+  background: #111b2a;
+}
+
 .documentos-summary {
   margin-top: 14px;
   display: grid;

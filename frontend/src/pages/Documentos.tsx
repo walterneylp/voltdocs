@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import {
   clearToken,
@@ -349,6 +351,7 @@ export function Documentos() {
           <div className="documentos-user-meta">
             <p className="documentos-user-name">{authUser?.name ?? "—"}</p>
             <p className="documentos-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -357,6 +360,7 @@ export function Documentos() {
         <header className="documentos-topbar">
           <span className="documentos-org">Apogeu Automação</span>
           <div className="documentos-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="documentos-bell" />
             <Link className="documentos-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="documentos-logout-icon" />

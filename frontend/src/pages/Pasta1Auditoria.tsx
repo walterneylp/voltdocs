@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { LucideIcon } from "../components/LucideIcon";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import {
   addAuditPasta1Evidence,
@@ -249,6 +250,7 @@ export function Pasta1Auditoria() {
           <div>
             <p>{authUser?.name ?? "—"}</p>
             <span>{authUser?.email ?? "—"}</span>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>

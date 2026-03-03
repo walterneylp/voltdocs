@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import { clearToken, listUserGroupMembers, listUserGroups } from "../lib/api";
 import "../styles/grupos.css";
@@ -117,6 +119,7 @@ export function Grupos() {
           <div className="grupos-user-meta">
             <p className="grupos-user-name">{authUser?.name ?? "—"}</p>
             <p className="grupos-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -125,6 +128,7 @@ export function Grupos() {
         <header className="grupos-topbar">
           <span className="grupos-org">Apogeu Automação</span>
           <div className="grupos-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="grupos-bell" />
             <Link className="grupos-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="grupos-logout-icon" />

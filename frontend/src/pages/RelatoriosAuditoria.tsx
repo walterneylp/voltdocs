@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import { clearToken } from "../lib/api";
 import "../styles/relatorios.css";
@@ -86,6 +88,7 @@ export function RelatoriosAuditoria() {
           <div className="relatorios-user-meta">
             <p className="relatorios-user-name">{authUser?.name ?? "—"}</p>
             <p className="relatorios-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -94,6 +97,7 @@ export function RelatoriosAuditoria() {
         <header className="relatorios-topbar">
           <span className="relatorios-org">Apogeu Automação</span>
           <div className="relatorios-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="relatorios-bell" />
             <Link className="relatorios-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="relatorios-logout-icon" />

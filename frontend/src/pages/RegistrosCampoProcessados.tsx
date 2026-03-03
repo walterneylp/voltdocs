@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { getAuthUser, clearAuthUser } from "../lib/auth";
 import { clearToken, getFieldUpdateFileUrl, listFieldUpdates } from "../lib/api";
 import "../styles/registros-campo.css";
@@ -191,6 +193,7 @@ export function RegistrosCampoProcessados() {
           <div className="rc-user-meta">
             <p className="rc-user-name">{authUser?.name ?? "—"}</p>
             <p className="rc-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -199,6 +202,7 @@ export function RegistrosCampoProcessados() {
         <header className="rc-topbar">
           <span className="rc-org">Apogeu Automação</span>
           <div className="rc-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="rc-bell" />
             <Link className="rc-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="rc-logout-icon" />

@@ -1,6 +1,8 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import { LucideIcon } from "../components/LucideIcon";
+import { GlobalThemeToggle } from "../components/GlobalThemeToggle";
+import { AppBuildInfo } from "../components/AppBuildInfo";
 import { clearAuthUser, getAuthUser } from "../lib/auth";
 import {
   clearToken,
@@ -261,6 +263,7 @@ export function EquipamentosDetalhes() {
           <div className="equip-user-meta">
             <p className="equip-user-name">{authUser?.name ?? "—"}</p>
             <p className="equip-user-email">{authUser?.email ?? "—"}</p>
+            <AppBuildInfo />
           </div>
         </div>
       </aside>
@@ -269,6 +272,7 @@ export function EquipamentosDetalhes() {
         <header className="equip-topbar">
           <span className="equip-org">Apogeu Automacao</span>
           <div className="equip-actions">
+            <GlobalThemeToggle />
             <LucideIcon name="bell" className="equip-bell" />
             <Link className="equip-logout" to="/alterar-senha">
               <LucideIcon name="lock" className="equip-logout-icon" />
